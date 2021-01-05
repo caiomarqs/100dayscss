@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hambuger-menu" class="hambuger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+<script>
+    const hambugerMenu = document.getElementById("hambuger-menu");
+    hambugerMenu.addEventListener('click', () => {
+        if(hambugerMenu.classList.contains('active')){
+            hambugerMenu.classList.remove('active');
+        }
+        else{
+            hambugerMenu.classList.add('active');
+        }
+    })
+</script>
+</html>

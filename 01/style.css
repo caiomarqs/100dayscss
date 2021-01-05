@@ -1,0 +1,182 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+
+    background-color: #3faf82;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: load 1s ease-in-out forwards;
+}
+
+.hambuger-menu {
+    min-height: 52px;
+    min-width: 80px;
+    position: relative;
+}
+
+.hambuger-menu:hover {
+    cursor: pointer;
+}
+
+.hambuger-menu span {
+    width: 100%;
+    height: 8px;
+    background-color: white;
+    display: block;
+    border-radius: 3px;
+    position: absolute;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.hambuger-menu span:nth-of-type(1) {
+    top: 0;
+    z-index: 50;
+    animation: bar-1-reverse 0.6s cubic-bezier(0.67, 0.01, 1, 0.72) forwards;
+}
+
+.hambuger-menu span:nth-of-type(2) {
+    top: calc(50% - 4px);
+    z-index: 0;
+    animation: bar-2-reverse 0.6s ease-in-out forwards;
+}
+
+.hambuger-menu span:nth-of-type(3) {
+    bottom: 0%;
+    z-index: 100;
+    animation: bar-3-reverse 0.6s cubic-bezier(0.67, 0.01, 1, 0.72) forwards;
+}
+
+.hambuger-menu.active span:nth-of-type(1) {
+    animation: bar-1 0.6s cubic-bezier(0.34, 0.54, 0.57, 1) forwards;
+}
+
+.hambuger-menu.active span:nth-of-type(2) {
+    animation: bar-2 0.6s ease-in-out forwards;
+}
+
+.hambuger-menu.active span:nth-of-type(3) {
+    animation: bar-3 0.6s cubic-bezier(0.34, 0.54, 0.57, 1) forwards;
+}
+
+
+/* Animations */
+@keyframes load {
+    0% {
+        filter: opacity(0);
+        background-color: white;
+    }  
+    50% {
+        filter: opacity(0);
+        background-color: white;
+    } 
+    100% {
+        filter: opacity(1);
+        background-color: #3faf82;
+    }
+}
+
+
+
+
+@keyframes bar-1 {
+    0% {
+        transform: rotate(0deg);
+        top: 0;
+    }
+    50% {
+        transform: rotate(0deg);
+        top: calc(50% - 4px);
+    }
+    100% {
+        transform: rotate(45deg);
+        top: calc(50% - 4px);
+    }
+}
+
+@keyframes bar-2 {
+    0% {
+        transform: scale(1);
+        filter: opacity(1);
+    }
+    50% {
+        transform: scale(0);
+        filter: opacity(0);
+    }
+    100% {
+        transform: scale(0);
+        filter: opacity(0);
+    }
+}
+
+@keyframes bar-3 {
+    0% {
+        transform: rotate(0deg);
+        bottom: 0;
+    }
+    50% {
+        transform: rotate(0deg);
+        bottom: calc(50% - 4px);
+    }
+    100% {
+        transform: rotate(135deg);
+        bottom: calc(50% - 4px);
+    }
+}
+
+
+/* Animations - Reverse */
+@keyframes bar-1-reverse {
+    0% {
+        transform: rotate(45deg);
+        top: calc(50% - 4px);
+    }
+    50% {
+        transform: rotate(0deg);
+        top: calc(50% - 4px);
+    }
+    100% {
+        transform: rotate(0deg);
+        top: 0;
+    }
+}
+
+@keyframes bar-2-reverse {
+    0% {
+        transform: scale(0);
+        filter: opacity(0);
+    }
+    50% {
+        transform: scale(0);
+        filter: opacity(0);
+    }
+    100% {
+        transform: scale(1);
+        filter: opacity(1);
+    }
+}
+
+@keyframes bar-3-reverse {
+    0% {
+        transform: rotate(135deg);
+        bottom: calc(50% - 4px);
+    }
+    50% {
+        transform: rotate(0deg);
+        bottom: calc(50% - 4px);
+    }
+    100% {
+        transform: rotate(0deg);
+        bottom: 0;
+    }
+}
