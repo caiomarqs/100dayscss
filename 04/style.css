@@ -1,0 +1,189 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+
+html {
+    box-sizing: border-box;
+    font-family: "Open Sans", Helvetica, sans-serif;
+}
+        
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+      
+body {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    background-color: #42A7A1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cal{
+    height: 13.75rem;
+    width: 17.5rem;
+    background: #fff;
+    border-radius: 0.1875rem;
+    overflow: hidden;
+    box-shadow: 4px 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.header{
+    height: 3.75rem;
+    width: 100%;
+    background-color: #F1BA64;
+    padding: 0 0.9375rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header span{
+    color: white;
+}
+
+.right, .left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.right span:nth-child(1){
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.right span:nth-child(2){
+    font-weight: 400;
+    font-size: 0.6875rem;
+}
+
+.left{
+    align-items: flex-end;
+}
+
+.left span:nth-child(1){
+    font-weight: 400;
+    font-size: 0.6875rem;
+}
+
+.left span:nth-child(2){
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.labels{
+    height: 2.625rem;
+    padding-top: 0.625rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.labels span {
+    font-size: 9px;
+    color: #606060;
+    line-height: 13px;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: center;
+    padding: 0 10px 0 7px;
+    
+}
+
+.labels span::before{
+    content: "";
+    width: 0.6875rem;
+    height: 0.1875rem;
+    display: block;
+    margin: 0 7px 0 0; /*(25 - 11) / 2*/
+}
+
+.labels span:first-of-type::before{
+    background-color: #FA7373;
+}
+
+.labels span:last-of-type::before{
+    background-color: #7BA2FF;
+}
+
+.chart{
+    height: 5.0625rem;
+    width: 16.25rem;
+    /* background-color: wheat; */
+    margin: auto;
+    position: relative;
+}
+
+.grid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.grid span{
+    height: 1px;
+    background-color: #F2F2F2;
+    width: 100%;
+    position: absolute;
+}
+
+.grid span:nth-child(1) {
+    top:0;
+    left: 0;
+}
+
+.grid span:nth-child(2) {
+    top: calc(50% - 1px);
+    left: 0;
+}
+
+.grid span:nth-child(3) {
+    bottom:0;
+    left: 0;
+}
+
+.lines{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.lines svg{
+    position: absolute;
+}
+
+.lines svg polyline{
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.lines svg:first-of-type polyline{
+    stroke: #FA7373;
+}
+
+.lines svg:last-of-type polyline{
+    stroke: #7BA2FF;
+}
+
+.week-days {
+    display: flex;
+}
+
+.week-days span{
+    width: calc(100% / 7);
+    text-align: center;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #949494;
+    line-height: 30px;
+}
+

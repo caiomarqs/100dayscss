@@ -6,5 +6,5 @@
 ### Day 02
 [Pyramid Shadow](https://codepen.io/caiomarqs/pen/jOMKVXg)
 
-## Day 03
+### Day 03
 [Circles Scales](https://codepen.io/caiomarqs/pen/vYXrgWv)
