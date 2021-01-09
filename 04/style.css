@@ -115,7 +115,6 @@ body {
 .chart{
     height: 5.0625rem;
     width: 16.25rem;
-    /* background-color: wheat; */
     margin: auto;
     position: relative;
 }
@@ -173,6 +172,146 @@ body {
 .lines svg:last-of-type polyline{
     stroke: #7BA2FF;
 }
+.points {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.red-points, .blue-points {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
+
+.red-points div {
+    background-color: #FA7373;
+}
+
+.blue-points div {
+    background-color: #7BA2FF;
+}
+
+div [class^="point-"] {
+    position: absolute;
+    height: 0.375rem;
+    width: 0.375rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.red-points .point-1 {
+    left: 6px;
+    top: 37px;
+}
+
+.red-points .point-2 {
+    left: 47px;
+    top: 9px;
+}
+
+.red-points .point-3 {
+    left: 87px;
+    top: 20px;
+}
+
+.red-points .point-4 {
+    left: 127px;
+    top: 8px;
+}
+
+.red-points .point-5 {
+    left: 168px;
+    top: 35px;
+}
+
+.red-points .point-6 {
+    left: 208px;
+    top: 45px;
+}
+
+.red-points .point-7 {
+    left: 248px;
+    top: 16px;
+}
+
+.blue-points .point-1 {
+    left: 6px;
+    top: 47px;
+}
+
+.blue-points .point-2 {
+    left: 47px;
+    top: 42px;
+}
+
+.blue-points .point-3 {
+    left: 87px;
+    top: 55px;
+}
+
+.blue-points .point-4 {
+    left: 127px;
+    top: 51px;
+}
+
+.blue-points .point-5 {
+    left: 168px;
+    top: 56px;
+}
+
+.blue-points .point-6 {
+    left: 208px;
+    top: 66px;
+}
+
+.blue-points .point-7 {
+    left: 248px;
+    top: 47px;
+}
+
+.red-points div .card, .red-points div .card::after {
+    background-color: #FA7373;
+}
+
+.blue-points div .card, .blue-points div .card::after {
+    background-color: #7BA2FF;
+}
+
+.card {
+    font-size: 11px;
+    line-height: 11px;
+    color: white;
+    padding: 8px 6px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    margin-left: -12px;
+    visibility: hidden;
+    filter: opacity(0);
+    transition: ease-in-out .4s;
+    z-index: 40;
+}
+
+div [class^="point-"]:hover .card{
+    visibility: visible;
+    filter: opacity(1);
+    bottom: 13px;
+}
+
+.card::after{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 6px;
+    width: 6px;
+    left: 50%;
+    margin-left: -3px;
+    bottom: -3px;
+    transform: rotate(45deg);
+}
 
 .week-days {
     display: flex;
@@ -186,4 +325,3 @@ body {
     color: #949494;
     line-height: 30px;
 }
-

@@ -8,3 +8,6 @@
 
 ### Day 03
 [Circles Scales](https://codepen.io/caiomarqs/pen/vYXrgWv)
+
+### Day 04
+[Weekly chart](https://codepen.io/caiomarqs/pen/wvzxRvB)
