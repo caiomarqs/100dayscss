@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+html {
+    box-sizing: border-box;
+    font-family: "Open Sans", Helvetica, sans-serif;
+}
+        
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+      
+body {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top right, #9298a9 0%, #0c0574 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    height: 299px;
+    width: 320px;
+    background-color: white;
+    border-radius: 0.1875rem;
+    overflow: hidden;
+    box-shadow: 3px 4px 20px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+}
+
+.profile {
+    width: 12.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #bec4f5;
+    cursor: pointer;
+    transition: filter .4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card:hover {
+    filter: brightness(.9);
+}
+
+.stat-card:nth-of-type(2) {
+    margin: 1px 0;
+}
+
+.val, .key {
+    color: #3a2e84;
+}
+
+.val {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.key {
+    font-size: 11px;
+}
+
+.avatar{
+    min-width: 82px;
+    min-height: 82px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 2.375rem;
+}
+
+.avatar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: calc((82px/2) - (70px/2));
+    left: calc((82px/2) - (70px/2));
+}
+
+.avatar .circle {
+    border-width: 1px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    border-style: solid;
+    transition: transform 1.5s ease-in-out;
+}
+
+.avatar .circle:first-of-type {
+    width: 82px;
+    height: 82px;
+    border-color: #3a2e84 transparent #3a2e84 #3a2e84;
+}
+
+.avatar .circle:last-of-type {
+    width: 76px;
+    height: 76px;
+    border-color: #3a2e84 #3a2e84 #3a2e84 transparent;
+    top: calc((82px/2) - (76px/2));
+    left: calc((82px/2) - (76px/2));
+}
+
+.avatar:hover .circle:first-of-type {
+    transform: rotate(-360deg);
+}
+
+.avatar:hover .circle:last-of-type {
+    transform: rotate(360deg);
+}
+
+.profile h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 13px 0 0 0;
+}
+
+.profile span {
+    font-size: 11px;
+    line-height: 15px;
+}
+
+.btns {
+    margin-top: 33px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btns button {
+    display: block;
+    width: 120px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #3a2e84;
+    box-sizing: border-box;
+    font-weight: 600;
+    color: #3a2e84;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.btns button:last-of-type {
+    margin-top: 10px;
+}
+
+.btns button:hover {
+    background-color: #3a2e84;
+    color: white;
+}
